@@ -17,7 +17,10 @@ void searchcont(Book contact[], int size)
          contact[j].get_all();
     }
     else
+    {
+        std::cin.clear();
         std::cout << "NO, enter number from 0 to " << size - 1 << std::endl;
+    }
 }
 
 void add_cont(Book contact[], int size)
