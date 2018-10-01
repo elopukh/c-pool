@@ -11,13 +11,13 @@ void searchcont(Book contact[], int size)
     for (int i = 0; i < size; i++)
         contact[i].check(i);
     std::cout << "Enter index" << std::endl;
-    std::cin >> j;
-    if (j < 0 || j >= size)
+    std::cin >>j;
+    if (std::cin.good() && j >= 0 && j < size)
     {
-        std::cout << "NO, enter number from 0 to " << size - 1 << std::endl;
-        std::cin >> j;
+         contact[j].get_all();
     }
-    contact[j].get_all();
+    else
+        std::cout << "NO, enter number from 0 to " << size - 1 << std::endl;
 }
 
 void add_cont(Book contact[], int size)
@@ -70,7 +70,7 @@ int main()
     {
         if (mystr == "ADD")
         {
-            if (size <= 8)
+            if (size < 8)
             {
                 add_cont(contact, size);
                 size++;
@@ -79,7 +79,12 @@ int main()
             std::cout << "PhoneBook is full!" << std::endl;
         }
         else if (mystr == "SEARCH")
-            searchcont(contact, size);
+        {
+            if (size > 0)
+                searchcont(contact, size);
+            else 
+                std::cout << "Nothing to search :(" << std::endl;
+        }
         else
             std::cout << "usage: ADD | SEARCH | EXIT" << std::endl;
         getline(std::cin, mystr);

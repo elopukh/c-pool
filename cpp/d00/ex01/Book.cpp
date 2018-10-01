@@ -34,20 +34,23 @@ void Book::set_contact( std::string first_name1,
 
 void Book::check(int i)
 {
+    first_name_ = first_name;
     if (first_name.length() > 10)
     {
-        first_name = first_name.substr(0,9);
-        first_name += ".";
+        first_name_ = first_name_.substr(0,9);
+        first_name_ += ".";
     }
+    last_name_ = last_name;
     if (last_name.length() > 10)
     {
-        last_name = last_name.substr(0,9);
-        last_name += ".";
+        last_name_ = last_name_.substr(0,9);
+        last_name_ += ".";
     }
+    nickname_ = nickname;
     if (nickname.length() > 10)
     {
-        nickname = nickname.substr(0,9);
-        nickname += ".";
+        nickname_ = nickname_.substr(0,9);
+        nickname_ += ".";
     }
     this->get_contact(i);
 }
@@ -55,9 +58,9 @@ void Book::check(int i)
 void Book::get_contact(int i)
 {
     std::cout << std::setw( 10) << std::right << i << "|"
-                        << std::setw(10) << first_name<< "|"
-                        << std::setw(10) << last_name<< "|"
-                        << std::setw(10) << nickname<< "|"
+                        << std::setw(10) << first_name_<< "|"
+                        << std::setw(10) << last_name_<< "|"
+                        << std::setw(10) << nickname_<< "|"
                         << std::endl;
 }
 
