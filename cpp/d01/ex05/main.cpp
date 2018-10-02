@@ -1,4 +1,4 @@
-#include "Human.cpp"
+#include "Human.hpp"
 
 int main() 
 {

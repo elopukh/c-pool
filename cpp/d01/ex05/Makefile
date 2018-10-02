@@ -12,9 +12,9 @@
 
 NAME = humans
 OBJ_DIR = obj/
-C_FILES = HumanA.cpp  HumanB.cpp  main.cpp Weapon.cpp
+C_FILES = Human.cpp main.cpp Brain.cpp
 OBJ = $(addprefix $(OBJ_DIR), $(C_FILES:.cpp=.o))
-HEADERS = HumanA.hpp  HumanB.hpp Weapon.hpp
+HEADERS = Human.hpp Brain.hpp
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 C_RED = \033[31m

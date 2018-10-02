@@ -2,9 +2,11 @@
   
   Brain::Brain( )
     {
+        return;
     }
    Brain::~Brain()
     {
+        return;
     }
     void Brain::setBrain (std::string type, double neirons, double weight)
     {
@@ -14,9 +16,8 @@
     }
     std::string Brain::identify()
     {
-        std::string a = "0x";
-        std::string *b;
-        *b = &this;
-
-        return(a);
+        std::stringstream ss;
+        ss << (const void *)this;
+        std::string address = ss.str();
+        return(address);
     }
