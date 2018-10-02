@@ -1,0 +1,37 @@
+#include <iostream>
+#include <fstream>
+
+void readff(char *filename, char *s1, char *s2)
+{
+    std::string str1 = s1;
+    std::string str2 = s2;
+    std::string r;
+    std::ifstream fin (filename);
+    if (!fin.is_open())
+        std::cout << "File is not opened!\n";
+    else
+    {
+        while (fin.getline(r))
+        {
+            if (r == str1)
+                r = str2;
+            std::ofstream ofs("FILENAME.replace", std::ios_base::app);
+            ofs << r << " ";
+            ofs.close();
+        }
+        fin.close();
+    }
+}
+
+int main(int argc, char **argv)
+{
+    if (argc == 4)
+    {
+        readff(argv[1], argv[2], argv[3]);
+    }
+    else 
+    {
+        std::cout << "USAGE: [filename] [s1] [s2]" << std::endl;
+    }
+    return (0);
+}

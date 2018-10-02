@@ -19,6 +19,7 @@ void randomChump()
 
 int main()
 {
+    srand(time(0));
     randomChump();
     randomChump();
     return (0);
