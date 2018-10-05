@@ -12,9 +12,9 @@
 
 NAME = fixed
 OBJ_DIR = obj/
-C_FILES = FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp
+C_FILES = FragTrap.cpp main.cpp ClapTrap.cpp ScavTrap.cpp NinjaTrap.cpp
 OBJ = $(addprefix $(OBJ_DIR), $(C_FILES:.cpp=.o))
-HEADERS = FragTrap.hpp ClapTrap.hpp ScavTrap.hpp
+HEADERS = FragTrap.hpp  NinjaTrap.hpp ClapTrap.hpp ScavTrap.hpp
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
 C_RED = \033[31m

@@ -18,6 +18,18 @@ ClapTrap::ClapTrap(std::string name) : hit(100), Energy(100), Maxenergy(100), Na
     this->Maxhit = 100;
     return;
 }
+ClapTrap::ClapTrap(int hit, int Maxhit, int Energy , int Maxenergy , int level ,std::string name, int Melee,int Ranged,int armor)
+{
+    this->hit = hit;
+    this->Maxhit = Maxhit;
+    this->Energy = Energy;
+    this->Maxenergy = Maxenergy;
+    this->Level = level;
+    this->Name = name;
+    this->Melee = Melee;
+    this->Ranged = Ranged;
+    this->armor = armor;
+}
 
 ClapTrap::~ClapTrap()
 {
